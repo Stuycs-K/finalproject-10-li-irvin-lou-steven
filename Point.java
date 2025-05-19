@@ -12,8 +12,8 @@ public class Point {
     return this.y;
   }
   public static void main(String[] args) {
-    Point dot = new Point(3.4, 3.5);
-    System.out.println(dot.getX());
-    System.out.println(dot.getY());
+    // Point dot = new Point(3.4, 3.5);
+    // System.out.println(dot.getX());
+    // System.out.println(dot.getY());
   }
 }
