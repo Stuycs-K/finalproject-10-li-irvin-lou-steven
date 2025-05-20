@@ -17,7 +17,7 @@ public class Point {
     this.y = null;
     this.isInfinity = true;
   }
-  
+
   public boolean isInfinity() {
     return isInfinity;
   }
@@ -34,6 +34,13 @@ public class Point {
   public String toString() {
     if (!isInfinity) {
       return "(" + this.x.toString() + ", " + this.y.toString() + ")";
+    }
+    return "Infinity";
+  }
+
+  public String toHexString() {
+    if (!isInfinity) {
+      return "(" + this.x.toString(16) + ", " + this.y.toString(16) + ")";
     }
     return "Infinity";
   }

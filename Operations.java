@@ -12,6 +12,7 @@ public class Operations {
   public static void main(String[] args) {
     System.out.println(initial);
     System.out.println(point_addition(initial, initial, prime));
+    System.out.println(point_addition(initial, initial, prime).toHexString());
     System.out.println(point_multiplication(initial, order, prime));
   }
 
@@ -24,7 +25,7 @@ public class Operations {
     }
     else if(p1_inf) {
       return Point2;
-    } 
+    }
     else if(p2_inf) {
       return Point1;
     }
@@ -32,10 +33,12 @@ public class Operations {
     BigInteger slope;
     if (Point1.getX().equals(Point2.getX())) {
         if (Point1.getY().equals(Point2.getY().negate().mod(prime))) {
-            throw new IllegalArgumentException("Sum is point at infinity, not allowed.");
+            return new Point();
         } else {
             //Slope = (3x1^2+a) * (2y^(p-2)) % p
-            slope = (new BigInteger("3").multiply(Point1.getX().modPow(new BigInteger("2"), prime)).add(a)).multiply(Point1.getY().modPow(prime.subtract(new BigInteger("2")), prime)).mod(prime);
+            BigInteger exp1 = new BigInteger("3").multiply(Point1.getX().modPow(new BigInteger("2"), prime)).add(a);
+            BigInteger exp2 = (new BigInteger("2")).multiply(Point1.getY()).modPow(prime.subtract(new BigInteger("2")), prime);
+            slope = exp1.multiply(exp2).mod(prime);
         }
     } else {
         //Slope = (y2-y1) * (x2-x1)^(p-2) % p
@@ -43,9 +46,11 @@ public class Operations {
     }
 
     //xcor = (slope^2-x1-x2) % p
-    BigInteger x_final = slope.modPow(new BigInteger("2"), prime).subtract(Point1.getX()).subtract(Point2.getX()).mod(prime);
+    BigInteger exp = slope.modPow(new BigInteger("2"), prime).subtract(Point1.getX()).subtract(Point2.getX());
+    BigInteger x_final = exp.mod(prime);
     //ycor = (slope*(x1-xcor)-y1) % p
-    BigInteger y_final = slope.multiply(Point1.getX().subtract(x_final)).subtract(Point1.getY()).mod(prime);
+    exp = slope.multiply(Point1.getX().subtract(x_final)).subtract(Point1.getY());
+    BigInteger y_final = exp.mod(prime);
 
     return new Point(x_final, y_final);
   }
