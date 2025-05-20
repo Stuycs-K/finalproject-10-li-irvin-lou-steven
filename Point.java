@@ -31,10 +31,17 @@ public class Point {
     return (p.getX() == null || p.getY() == null);
   }
 
+  public String toString() {
+    if (!isInfinity) {
+      return "(" + this.x.toString() + ", " + this.y.toString() + ")";
+    }
+    return "Infinity";
+  }
+
   //Test//
   public static void main(String[] args) {
-    Point dot = new Point(new BigInteger("35553355353535"), new BigInteger("33553535535353355"));
-    System.out.println(dot.getX());
-    System.out.println(dot.getY());
+    // Point dot = new Point(3.4, 3.5);
+    // System.out.println(dot.getX());
+    // System.out.println(dot.getY());
   }
 }
