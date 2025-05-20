@@ -1,14 +1,16 @@
+import java.math.BigInteger;
+
 public class Point {
-  double x;
-  double y;
-  public Point(double x, double y) {
+  BigInteger x;
+  BigInteger y;
+  public Point(BigInteger x, BigInteger y) {
     this.x = x;
     this.y = y;
   }
-  public double getX() {
+  public BigInteger getX() {
     return this.x;
   }
-  public double getY() {
+  public BigInteger getY() {
     return this.y;
   }
   public static void main(String[] args) {
