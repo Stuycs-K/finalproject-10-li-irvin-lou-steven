@@ -13,6 +13,8 @@ public class Point {
   }
 
   public Point() {
+    this.x = null;
+    this.y = null;
     this.isInfinity = true;
   }
 
