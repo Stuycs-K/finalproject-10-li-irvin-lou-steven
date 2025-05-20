@@ -31,6 +31,13 @@ public class Point {
     return (p.getX() == null || p.getY() == null);
   }
 
+  public String toString() {
+    if (!isInfinity) {
+      return "(" + this.x.toString() + ", " + this.y.toString() + ")";
+    }
+    return "Infinity";
+  }
+
   //Test//
   public static void main(String[] args) {
     // Point dot = new Point(3.4, 3.5);
