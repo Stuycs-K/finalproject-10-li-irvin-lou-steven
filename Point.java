@@ -17,7 +17,7 @@ public class Point {
     this.y = null;
     this.isInfinity = true;
   }
-
+  
   public boolean isInfinity() {
     return isInfinity;
   }
@@ -27,6 +27,10 @@ public class Point {
   public BigInteger getY() {
     return this.y;
   }
+  public static boolean isPointAtInfinity(Point p) {
+    return (p.getX() == null || p.getY() == null);
+  }
+
   //Test//
   public static void main(String[] args) {
     Point dot = new Point(new BigInteger("35553355353535"), new BigInteger("33553535535353355"));
