@@ -16,3 +16,9 @@ Verified that there is a way to test almost every step in the process.
 Steven created the Point class for mapping points on the elliptic curve. We realized that we could not use ints, doubles, or longs because the primes could be 190-520 bits which would result in inprecise coordinates due to rounding. We decided to use BigInteger, but we do not have access to a function isinfinity() with a BigInteger since the int can be as large as the devices memory can handle. As a result, we had to instead assign an infinity boolean  and check for that. 
 
 Started mapping and testing point addition for the different conditions when calculating points on elliptic curves.
+
+### 2025-05-20 - Testing/Debugging Point Addition/Multiplication
+Steven and I were both trying to debug point addition and multiplication. He was able to get it working before I did, so he committed instead of me. We discussed future features that we can for ecc such as possibly sending private keys to another user to decrypt and identify senders of the encryprted message.
+
+### 2025-05-22 - Key Generation
+I was working on Key Generation and made the new keyPair class in order to make key generation/storage easier and cleaner. Beginning work on message signing.
