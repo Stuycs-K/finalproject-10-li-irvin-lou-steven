@@ -8,4 +8,11 @@ public class KeyPair {
         this.privateKey = privateKey;
         this.publicKey = publicKey;
     }
+
+    public BigInteger getprivate_key() {
+    return this.privateKey;
+  }
+  public Point getpublic_key() {
+    return this.publicKey;
+  }
 }
