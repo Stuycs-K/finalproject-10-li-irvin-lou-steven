@@ -1,5 +1,5 @@
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.web3j.crypto;
+import org.web3j.crypto.Hash;
 import java.math.BigInteger;
 
 
