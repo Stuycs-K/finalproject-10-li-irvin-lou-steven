@@ -9,4 +9,8 @@ public class Sign {
         this.signature = signature;
     }
     
+    public String toString() {
+        return "Signature: \n" + message_hash + "\n" + signature;
+    }
+    
 }

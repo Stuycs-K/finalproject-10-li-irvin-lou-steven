@@ -9,3 +9,16 @@ Spent time researching about Elliptic Curve Cryptography(ECC) and recorded our n
 
 ### 2025-05-19 - Brief description
 For the entire class and for homework, I implemented the Point java class and point muliplication and addition in the Operations java class. I tested both of them, but the multiplication and addition does not match up witht he values found for the paramters online, so further debugging must be done to figure out what's wrong.
+
+### 2025-05-20 - Brief description
+
+
+### 2025-05-21 - Brief description
+
+### 2025-05-22 - Brief description
+
+### 2025-05-23 - Brief description
+
+### 2025-05-27 - Brief description
+
+### 2025-05-28 - Brief description
