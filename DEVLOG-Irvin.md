@@ -22,3 +22,14 @@ Steven and I were both trying to debug point addition and multiplication. He was
 
 ### 2025-05-22 - Key Generation
 I was working on Key Generation and made the new keyPair class in order to make key generation/storage easier and cleaner. Beginning work on message signing.
+
+### 2025-05-23/24 - Signing
+Created sign class and ran into issues with the hash class we were planning to use. Creates the class Sign and that includes storing the hash and the calculated point for a signature. Also changed things to private to make everything streamlined and consistent across different files.
+
+### 2025-05-25 - Researching .jar files
+Researched how to import .jar file. Kept getting information to use maven or gradle, but I am not sure I allowed to use these or IDEs so I will try to manually add the jar file and the depencies.
+
+### 2025-05-27 - Attempting to implement .jar file
+Created lib and added org.web3j.crypto.jar into it and updated makefile to properly test sign using the necesarry parameters. Seems to not work, I try to make it a dependency and google-fu is letting me down.
+
+### 

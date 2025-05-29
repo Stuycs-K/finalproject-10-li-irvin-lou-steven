@@ -1,3 +1,5 @@
+package org.web3j.crypto;
+
 import static java.nio.charset.StandardCharsets.UTF_8;
 import org.web3j.crypto.Hash;
 import java.math.BigInteger;
