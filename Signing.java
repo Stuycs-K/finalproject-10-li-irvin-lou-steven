@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Signing {
     public static void main(String[] args) {
-      System.out.println(sign("IAMIRVIN.", new BigInteger("9813478"), Operations.initial, Operations.order, Operations.prime));
+      System.out.println(sign("IAMIRVIN.", new BigInteger("1790035163011528565713050044226275379977999851922392266992153460040507541440317969685198507852997536135297946489205325901536131211444217777968787036235653"), Operations.initial, Operations.order, Operations.prime));
     }
 
     public static Sign sign(String message, BigInteger private_key, Point InitialPoint, BigInteger order, BigInteger prime) {
