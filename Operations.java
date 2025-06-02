@@ -11,7 +11,6 @@ public class Operations {
   public static BigInteger order;
   public static Point initial;
 
-  
   public static void main(String[] args) {
     System.out.println(initial);
     System.out.println(point_addition(initial, initial, prime));
