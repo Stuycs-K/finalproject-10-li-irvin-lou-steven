@@ -2,7 +2,7 @@ import java.math.BigInteger;
 
 public class KeyPair {
   private BigInteger privateKey;
-  private Point publicKey;
+  public Point publicKey;
 
   public KeyPair(BigInteger privateKey, Point publicKey) {
       this.privateKey = privateKey;
