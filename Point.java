@@ -27,9 +27,6 @@ public class Point {
   public BigInteger getY() {
     return this.y;
   }
-  public Point add(Point other) {
-    return new Point(other.getX().add(this.getX()), other.getY().add(this.getY()));
-  }
   public static boolean isPointAtInfinity(Point p) {
     return (p.getX() == null || p.getY() == null);
   }

@@ -20,6 +20,8 @@ public class Signing {
         BigInteger r = new BigInteger("0");
         BigInteger s = new BigInteger("0");
         while(r.equals(new BigInteger("0")) || s.equals(new BigInteger("0"))) {
+          r = new BigInteger("0");
+          s = new BigInteger("0");
           BigInteger rand_int = new BigInteger("0");
           try {
             rand_int = Keygen.getRandomBigInteger(order.bitLength());
@@ -28,7 +30,7 @@ public class Signing {
           }
           Point rand_point = Operations.point_multiplication(InitialPoint, rand_int, prime);
           r = rand_point.getX().mod(order);
-          s = rand_int.modInverse(order).multiply(z.add(r.multiply(private_key)));
+          s = rand_int.modInverse(order).multiply(z.add(r.multiply(private_key))).mod(order);
         }
         Point result = new Point(r,s);
         return new Sign(message_hash_hex, result);
