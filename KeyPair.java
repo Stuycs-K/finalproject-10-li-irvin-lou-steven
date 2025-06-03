@@ -1,6 +1,8 @@
+import java.io.Serializable;
 import java.math.BigInteger;
 
-public class KeyPair {
+public class KeyPair implements Serializable {
+  private static final long serialVersionUID = 1L;
   private BigInteger privateKey;
   public Point publicKey;
 
