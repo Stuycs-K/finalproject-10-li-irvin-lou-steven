@@ -10,6 +10,21 @@ public class Verify {
     }
 
     public static boolean verify(Sign signature, Point public_key, Point InitialPoint, BigInteger order, BigInteger prime) {
+      //Check if the given elliptic curve parameters meet the designated requirements
+      if (InitialPoint.isInfinity()) {
+        return false;
+      }
+      BigInteger initial_y = InitialPoint.getY();
+      BigInteger checkValue1 = initial_y.modPow(new BigInteger("2"), Operations.prime);
+      BigInteger initial_x = InitialPoint.getX();
+      BigInteger checkValue2 = initial_x.modPow(new BigInteger("3"), Operations.prime).add(Operations.a.multiply(initial_x)).add(Operations.b).mod(prime);
+      if (!checkValue1.equals(checkValue2)) {
+        return false;
+      }
+      Point checkPoint = Operations.point_multiplication(InitialPoint, order, prime);
+      if (!checkPoint.isInfinity()) {
+        return false;
+      }
       //u1 = hash * s^(-1) mod order
       //u2 = r * s^(-1) mod order
       //X = u1 * G + u2 * public
@@ -20,6 +35,15 @@ public class Verify {
       Point point_signature = signature.get_signature();
       BigInteger r = point_signature.getX();
       BigInteger s = point_signature.getY();
+      // System.out.println(r);
+      // System.out.println(s);
+      // System.out.println(order);
+      if (r.compareTo(new BigInteger("1")) == -1 || r.compareTo(order) >= 0) {
+        return false;
+      }
+      if (s.compareTo(new BigInteger("1")) == -1 || s.compareTo(order) >= 0) {
+        return false;
+      }
       BigInteger s_inverse = s.modInverse(order);
       BigInteger u1 = z.multiply(s_inverse).mod(order);
       BigInteger u2 = r.multiply(s_inverse).mod(order);
