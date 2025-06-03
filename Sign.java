@@ -1,6 +1,8 @@
+import java.io.Serializable;
 import java.math.BigInteger;
 
-public class Sign {
+public class Sign implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String message_hash;
     private Point signature;
 

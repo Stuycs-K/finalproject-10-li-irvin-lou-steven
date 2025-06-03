@@ -1,6 +1,8 @@
+import java.io.Serializable;
 import java.math.BigInteger;
 
-public class Point {
+public class Point implements Serializable {
+  private static final long serialVersionUID = 1L;
   //Variables (Coordinates)//
   private BigInteger x;
   private BigInteger y;
