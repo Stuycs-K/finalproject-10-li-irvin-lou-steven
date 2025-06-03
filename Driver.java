@@ -28,22 +28,22 @@ public class Driver{
   */}
     else if(parameter.equals("secp192k1")) {
       System.out.println("3");
-    )
+    }
     else if(parameter.equals("secp192r1")) {
       System.out.println("4");
-    )
+    }
     else if(parameter.equals("secp224k1")) {
       System.out.println("5");
-    )
+    }
     else if(parameter.equals("secp224r1")) {
       System.out.println("6");
-    )
+    }
     else if(parameter.equals("secp384r1")) {
       System.out.println("3");
-    )
+    }
     else if(parameter.equals("secp521r1")) {
       System.out.println("3");
-    )
+    }
     else {
       System.out.println("1");
     }
