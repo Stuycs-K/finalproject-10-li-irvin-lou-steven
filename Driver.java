@@ -13,8 +13,8 @@ public class Driver{
     public static void main(String[] args) throws IOException {
        /* if(args.length < 3) {
             System.err.println("Not valid arg length");
-        }
-*/        if(args[0].equals("secp256k1")) {
+        }*/      
+        if(args[0].equals("secp256k1")) {
             a = new BigInteger("0");
             b = new BigInteger("7");
             prime = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F", 16);
@@ -29,14 +29,6 @@ public class Driver{
             x_initial = new BigInteger("6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296", 16);
             y_initial = new BigInteger("4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5", 16);
             order = new BigInteger("ffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632551", 16);
-        }
-        else{
-            a = new BigInteger("0");
-            b = new BigInteger("7");
-            prime = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F", 16);
-            x_initial = new BigInteger("79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798", 16);
-            y_initial = new BigInteger("483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8", 16);
-            order = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141", 16);
         }
         initial = new Point(x_initial, y_initial);
         Operations selectedCurve = new Operations();

@@ -11,7 +11,7 @@ public class Verify {
 
     public static boolean verify(Sign signature, Point public_key, Point InitialPoint, BigInteger order, BigInteger prime) {
       //Check if the given elliptic curve parameters meet the designated requirements
-      if (InitialPoint.isInfinity()) {
+      if (Point.isPointAtInfinity(InitialPoint)) {
         return false;
       }
       BigInteger initial_y = InitialPoint.getY();
@@ -22,14 +22,15 @@ public class Verify {
         return false;
       }
       Point checkPoint = Operations.point_multiplication(InitialPoint, order, prime);
-      if (!checkPoint.isInfinity()) {
+      if (!Point.isPointAtInfinity(checkPoint)) {
         return false;
       }
       //u1 = hash * s^(-1) mod order
       //u2 = r * s^(-1) mod order
       //X = u1 * G + u2 * public
       //Check X=r
-      BigInteger integer_hash = new BigInteger(signature.get_hash(), 16);
+      String message_hash_hex = Signing.sha_256_hash(signature.get_message());
+      BigInteger integer_hash = new BigInteger(message_hash_hex, 16);
       BigInteger z = integer_hash;
       z = z.shiftRight(z.bitLength() - order.bitLength());
       Point point_signature = signature.get_signature();

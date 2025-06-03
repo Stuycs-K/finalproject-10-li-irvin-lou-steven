@@ -20,9 +20,6 @@ public class Point implements Serializable {
     this.isInfinity = true;
   }
 
-  public boolean isInfinity() {
-    return isInfinity;
-  }
   public BigInteger getX() {
     return this.x;
   }

@@ -32,7 +32,7 @@ public class Signing {
           s = rand_int.modInverse(order).multiply(z.add(r.multiply(private_key))).mod(order);
         }
         Point result = new Point(r,s);
-        return new Sign(message_hash_hex, result);
+        return new Sign(message, result);
     }
     
     public static String sha_256_hash(String input) {

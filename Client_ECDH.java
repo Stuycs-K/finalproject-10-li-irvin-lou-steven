@@ -2,7 +2,7 @@ import java.io.*;
 import java.net.*;
 import java.math.BigInteger;
 
-public class Server {
+public class Client_ECDH {
     public static BigInteger a;
     public static BigInteger b;
     public static BigInteger prime;
@@ -11,8 +11,9 @@ public class Server {
     public static BigInteger order;
     public static Point initial;
     public static void main(String[] args) throws Exception {
-        String message = "This is a test message.";
+        String message = "Test message from client";
 
+        // KeyGen
         if (args.length == 0) {
             a = new BigInteger("0");
             b = new BigInteger("7");
@@ -41,19 +42,26 @@ public class Server {
         Operations selectedCurve = new Operations();
         selectedCurve.updateCurveParam(a,b,prime,x_initial,y_initial,order,initial);
 
-        ServerSocket serverSocket = new ServerSocket(5050);
-        System.out.println("Server started, waiting for client...");
-
-        //Waiting for connection
-        Socket socket = serverSocket.accept();
-        System.out.println("Client connected.");
-
-        //Recieves objects through socket
+        //Connecting to server
+        Socket socket = new Socket("localhost", 5050);
+        ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
         ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
-        //ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+
+        //Generate Keypair
+        KeyPair keypair = Keygen.genKeyPair(initial, order, prime);
+
+        // Signature
+        Sign signature = Signing.sign(message, keypair.getprivate_key(), initial, order, prime);
+
+        //Send Signature and Keypair
+        out.writeObject(signature);
+        out.writeObject(keypair.getpublic_key());
+
+        //Flush
+        out.flush();
 
         // Read the signed object and public key
-        Sign signature = (Sign) in.readObject();
+        signature = (Sign) in.readObject();
         Point publicKey = (Point) in.readObject();
 
         System.out.println("Received:");
@@ -64,19 +72,40 @@ public class Server {
         boolean isValid = Verify.verify(signature, publicKey, initial, order, prime);
 
         System.out.println("Signature valid? " + isValid);
-        // if(isValid) {
-        //     System.out.println("Message: " + signature.get_message());
+
+        // while (in.readObject() != null) {
+        //     //Generate Keypair
+        //     KeyPair keypair = Keygen.genKeyPair(initial, order, prime);
+
+        //     // Signature
+        //     Sign signature = Signing.sign(message, keypair.getprivate_key(), initial, order, prime);
+
+        //     //Send Signature and Keypair
+        //     out.writeObject(signature);
+        //     out.writeObject(keypair.getpublic_key());
+
+        //     // Read the signed object and public key
+        //     signature = (Sign) in.readObject();
+        //     Point publicKey = (Point) in.readObject();
+
+        //     System.out.println("Received:");
+        //     System.out.println(signature);
+        //     System.out.println("Public Key: " + publicKey);
+
+        //     // Verify
+        //     boolean isValid = Verify.verify(signature, publicKey, initial, order, prime);
+
+        //     System.out.println("Signature valid? " + isValid);
+
+        //     //Listen to end connection
+        //     in.readObject();
         // }
 
-        // //Generate Keypair
-        // KeyPair keypair = Keygen.genKeyPair(initial, order, prime);
-
-        // // Signature
-        // Sign signature = Signing.sign(message, keypair.getprivate_key(), initial, order, prime);
-
+        // //End connection
+        // out.writeObject(null);
 
         in.close();
+        out.close();
         socket.close();
-        serverSocket.close();
     }
 }
