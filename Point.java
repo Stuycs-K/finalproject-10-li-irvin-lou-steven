@@ -28,7 +28,7 @@ public class Point {
     return this.y;
   }
   public static boolean isPointAtInfinity(Point p) {
-    return (p.getX() == null || p.getY() == null);
+    return p != null && p.isInfinity;
   }
 
   public String toString() {

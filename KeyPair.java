@@ -11,7 +11,7 @@ public class KeyPair {
 
   public BigInteger getprivate_key() {
     return this.privateKey;
-}
+  }
   public Point getpublic_key() {
     return this.publicKey;
   }

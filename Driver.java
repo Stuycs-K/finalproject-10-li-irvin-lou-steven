@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Scanner;
@@ -40,6 +39,8 @@ public class Driver{
             order = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141", 16);
         }
         initial = new Point(x_initial, y_initial);
+        Operations selectedCurve = new Operations();
+        selectedCurve.updateCurveParam(a,b,prime,x_initial,y_initial,order,initial);
         KeyPair key1 = Keygen.genKeyPair(initial, order, prime);
 
         Scanner scan = new Scanner(System.in);
@@ -47,6 +48,10 @@ public class Driver{
         String message = scan.nextLine();
         scan.close();
         Sign signature = Signing.sign(message, key1.getprivate_key(), initial, order, prime);
+        System.out.println("Private Key: " + key1.getprivate_key());
+        System.out.println("Public Key: " + key1.getpublic_key());
+        System.out.println(signature);
+        System.out.println("Verify: " + Verify.verify(signature, key1.getpublic_key(), initial, order, prime));
         /*
         System.out.println("a: " + a);
         System.out.println("b: " + b);

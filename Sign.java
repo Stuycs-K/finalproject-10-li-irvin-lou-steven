@@ -18,7 +18,7 @@ public class Sign {
     }
 
     public String toString() {
-        return "Signature: \n" + message_hash + "\n" + signature;
+        return "Message Hash: " + message_hash + "\n" + "Signature: " + signature;
     }
 
 }

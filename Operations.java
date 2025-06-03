@@ -35,6 +35,16 @@ public class Operations {
     System.out.println(point_multiplication(initial, order, prime));
   }
 
+  public void updateCurveParam(BigInteger a, BigInteger b, BigInteger prime, BigInteger x_intiial, BigInteger y_intiial, BigInteger order, Point initial) {
+    this.a = a;
+    this.b = b;
+    this.prime = prime;
+    this.x_initial = x_initial;
+    this.y_initial = y_intiial;
+    this.order = order;
+    this.initial = initial;
+  }
+
   public static Point point_addition(Point Point1, Point Point2, BigInteger prime) {
     boolean p1_inf = Point.isPointAtInfinity(Point1);
     boolean p2_inf = Point.isPointAtInfinity(Point2);
