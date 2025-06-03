@@ -16,6 +16,7 @@ Client:
 #Server.java
 Server:
 	java Server.java
+	
 # Clean compiled files
 clean:
 	rm -f *.class
