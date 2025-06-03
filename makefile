@@ -2,15 +2,11 @@
 all: compile
 
 # Compile the Java file
-compile: Signing.class
+compile:
+	javac *.java
 
-Signing.class: Signing.java
-	javac -cp ".:lib/*" Signing.java
-
-# Run the program
-run: Signing.class
-	java -cp ".:lib/*" Signing
-
+#run Java files
+	java Driver.java $(ARGS)
 # Clean compiled files
 clean:
 	rm -f *.class
