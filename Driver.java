@@ -1,4 +1,5 @@
 
+import java.io.IOException;
 import java.math.BigInteger;
 public class Driver{
     public static BigInteger a;
@@ -8,7 +9,7 @@ public class Driver{
     public static BigInteger y_initial;
     public static BigInteger order;
     public static Point initial;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
        /* if(args.length < 3) {
             System.err.println("Not valid arg length");
         }
@@ -37,6 +38,8 @@ public class Driver{
             order = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141", 16);
         }
         initial = new Point(x_initial, y_initial);
+        KeyPair key1 = Keygen.genKeyPair(initial, order, prime);
+        
         /*
         System.out.println("a: " + a);
         System.out.println("b: " + b);
