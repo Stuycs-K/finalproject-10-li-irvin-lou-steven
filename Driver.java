@@ -1,6 +1,8 @@
 
 import java.io.IOException;
 import java.math.BigInteger;
+import java.util.Scanner;
+
 public class Driver{
     public static BigInteger a;
     public static BigInteger b;
@@ -39,7 +41,12 @@ public class Driver{
         }
         initial = new Point(x_initial, y_initial);
         KeyPair key1 = Keygen.genKeyPair(initial, order, prime);
-        
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter message");
+        String message = scan.nextLine();
+        scan.close();
+        Sign signature = Signing.sign(message, key1.getprivate_key(), initial, order, prime);
         /*
         System.out.println("a: " + a);
         System.out.println("b: " + b);
