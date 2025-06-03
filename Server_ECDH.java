@@ -1,6 +1,8 @@
 import java.io.*;
 import java.net.*;
 import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.HexFormat;
 
 public class Server_ECDH {
     public static BigInteger a;
@@ -77,6 +79,24 @@ public class Server_ECDH {
 
         //Flush
         out.flush();
+
+        //Read the encrypted message
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String hexMessage = bufferedReader.readLine();
+        System.out.println("Received: " + hexMessage);
+
+        //Generate symmetric key
+        Point sym_key = selectedCurve.point_multiplication(publicKey, keypair.getprivate_key(), prime);
+        System.out.println("Symmetric Key: " + sym_key);
+
+        byte[] message_bytes = Symmetric_Encrypt.encrypt_xor(sym_key.getX(), HexFormat.of().parseHex(hexMessage));
+        byte[] unsalted_message = new byte[message_bytes.length - Symmetric_Encrypt.salt.length()];
+        for (int i = 0; i < message_bytes.length - Symmetric_Encrypt.salt.length(); i++) {
+            unsalted_message[i] = message_bytes[i];
+        }
+        String result = new String(unsalted_message);
+        
+        System.out.println("Message: " + result);
 
         // while (in.readObject() == null) {
         //     // Read the signed object and public key

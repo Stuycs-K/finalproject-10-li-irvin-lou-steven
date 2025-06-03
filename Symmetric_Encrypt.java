@@ -7,6 +7,7 @@ import java.math.BigInteger;
 import java.io.IOException;
 
 public class Symmetric_Encrypt {
+    public static String salt = "thisisasalt";
     public static void main(String[] args) {
         String result = "aonsdiubqwdoasid";
         System.out.println(result);

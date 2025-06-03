@@ -1,6 +1,8 @@
 import java.io.*;
 import java.net.*;
 import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.HexFormat;
 
 public class Client_ECDH {
     public static BigInteger a;
@@ -14,7 +16,7 @@ public class Client_ECDH {
         String message = "Test message from client";
 
         // KeyGen
-        if (args.length == 0) {
+        if (args.length == 1) {
             a = new BigInteger("0");
             b = new BigInteger("7");
             prime = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F", 16);
@@ -22,7 +24,7 @@ public class Client_ECDH {
             y_initial = new BigInteger("483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8", 16);
             order = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141", 16);
         }
-        else if(args[0].equals("secp256k1")) {
+        else if(args[1].equals("secp256k1")) {
             a = new BigInteger("0");
             b = new BigInteger("7");
             prime = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F", 16);
@@ -30,7 +32,7 @@ public class Client_ECDH {
             y_initial = new BigInteger("483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8", 16);
             order = new BigInteger("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141", 16);
         }
-        else if(args[0].equals("secp256r1")) {
+        else if(args[1].equals("secp256r1")) {
             a = new BigInteger("ffffffff00000001000000000000000000000000fffffffffffffffffffffffc", 16);
             b = new BigInteger("5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b", 16);
             prime = new BigInteger("ffffffff00000001000000000000000000000000ffffffffffffffffffffffff", 16);
@@ -72,6 +74,25 @@ public class Client_ECDH {
         boolean isValid = Verify.verify(signature, publicKey, initial, order, prime);
 
         System.out.println("Signature valid? " + isValid);
+
+        //Send message
+        System.out.println("Message: " + args[0]);
+
+        Point sym_key = selectedCurve.point_multiplication(publicKey, keypair.getprivate_key(), prime);
+        System.out.println("Symmetric key: " + sym_key);
+
+        String salted_message = args[0] + Symmetric_Encrypt.salt;
+        byte[] encrypted = Symmetric_Encrypt.encrypt_xor(sym_key.getX(), salted_message.getBytes());
+        String hexMessage = HexFormat.of().formatHex(encrypted);
+        
+        OutputStreamWriter os = new OutputStreamWriter(socket.getOutputStream());
+        os.write(hexMessage);
+
+        //Flush
+        os.flush();
+
+        //Print hexmessage
+        System.out.println("Sent: " + hexMessage);
 
         // while (in.readObject() != null) {
         //     //Generate Keypair
