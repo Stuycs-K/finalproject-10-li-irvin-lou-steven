@@ -56,7 +56,7 @@ public class Client {
         selectedCurve.updateCurveParam(a,b,prime,x_initial,y_initial,order,initial);
         if(args.length == 4) {
             if(args[2].equals("-e")) {
-                if(args[3].toLowerCase().equals("edch")){
+                if(args[3].toLowerCase().equals("ecdh")){
                     //Connecting to server
                     Socket socket = new Socket("localhost", 5050);
                     ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());

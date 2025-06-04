@@ -61,7 +61,7 @@ public class Server {
         //Args[3] will be either edcsa or edch
         if(args.length == 4) {
             if(args[2].equals("-e")) {
-                if(args[3].toLowerCase().equals("edch")){
+                if(args[3].toLowerCase().equals("ecdh")){
                     Scanner scan = new Scanner(System.in);
                     System.out.println("Enter message");
                     String message = scan.nextLine();
