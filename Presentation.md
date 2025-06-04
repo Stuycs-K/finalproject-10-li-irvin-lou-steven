@@ -31,7 +31,7 @@ Given two points $P$ and $Q$ on the elliptic curve and a prime for finite field:
 
 Return the other point 
 
-**Case 2: Period Doubling $$\( P \e Q \)$$:**
+**Case 2: Period Doubling $$\( P = Q \)$$:**
 
 First find the slope between the two points using the following equation.
 
@@ -49,7 +49,7 @@ $$
 y_3 = m(x_1 - x_3) - y_1 \pmod{p}
 $$
 
-**Case 3: Inverse Points $$\( Q \e -P \)$$**
+**Case 3: Inverse Points $$\( Q = -P \)$$**
 
 The resulting point will be at infinity and is an identity.
 
@@ -61,7 +61,7 @@ $$
 m = \frac{y_2 - y_1}{x_2 - x_1} \pmod{p}
 $$
 
-Then:
+Then calculate the coordinates of the thirs point using the folloiwing equations.
 
 $$
 x_3 = m^2 - x_1 - x_2 \pmod{p}
