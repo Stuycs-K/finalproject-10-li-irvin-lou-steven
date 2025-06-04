@@ -119,5 +119,5 @@ $$
 Where:
 - \( G \) is the known base point
 - \( d \) is the private key
-- \( Q \) is the **public key**, a point \( (x, y) \) on the curve
+- \( Q \) is the **public key**, a point \(x, y\) on the curve
 
