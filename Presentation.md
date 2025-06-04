@@ -221,7 +221,25 @@ r \equiv X \mod n
 Through an insecure channel, a client and server party are able to generate a symmetric key without third-parties receiving access to the symmetric key.
 
 #### Step 1:
-The server listens for the client through a port, waiting to receive their public key and a signed message. The signature is used to verify if the public key is truly from their client, preventing man-in-the-middle (MitM) attacks.
+Both parties generate their own public and private key pairs, agreeing on the same elliptic curve parameters.
 
 #### Step 2:
-The server then verifies the client's signature using their public key. If it is indeed their client, then they will send 
+The server listens for the client through a port, waiting to receive their static public key and a signed message. The signature is used to verify if the public key is truly from their client, preventing man-in-the-middle (MitM) attacks.
+
+#### Step 3:
+The server then verifies the client's signature using their static public key. If it is indeed their client, then they will send their own static public key along with a signature for the client to validate them.
+
+#### Step 4:
+The client receives the static public key from the server and uses it to verify the server's authenticity.
+
+#### Step 5:
+The client creates the shared secret by multiplying the server's public key and their own private key, resulting on a point on the elliptic curve. Likewise, the server creates the shared secret my multiplying the client's public key and their own private key, resulting on the same point on the elliptic curve. This is the case because
+
+$$
+d_A \cdot Q_B = d_A \cdot d_B \cdot G = d_B \cdot d_A \cdot G = d_B \cdot Q_A.
+$$
+
+In other words, multiplication by BigInteger keys is commutative under elliptic curve operations.
+
+#### Step 6:
+The client uses a key derivation function in combination with a hash to elongate the shared message 
