@@ -1,3 +1,3 @@
-**Elliptic Curve Cryptography (ECC)**
+**Elliptic Curve Cryptography (ECC)**\n
 GROUP MEMBERS:
 Irvin Li, Steven Luo
