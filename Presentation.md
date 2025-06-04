@@ -173,22 +173,13 @@ Ensure that:
 
 - G is not a poiint at infinity
 - G lies on the curve:  
-  \[
+  $$\[
   y^2 \equiv x^3 + ax + b \pmod{p}
-  \]
+  \]$$
 
 - The point has correct order:
-  \[
+  $$\[
   n \cdot G = \mathcal{O}
-  \]
+  \]$$
 
----
-
-#### Step 2: Check signature bounds
-
-Ensure:
-
-\[
-1 \leq r < n,\quad 1 \leq s < n
-\]
 
