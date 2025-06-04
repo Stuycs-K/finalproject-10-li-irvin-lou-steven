@@ -85,7 +85,10 @@ $$
 
 #### Point Multiplication
 
-The equation for point multiplication is $Q = k \cdot P$
+The equation for point multiplication is $Q = k \cdot P$ where:
+- A point \( P \) on the elliptic curve
+- A scalar (integer) \( k \)
+
 
 This means:
 - Add \( P \) to itself \( k \) times:
