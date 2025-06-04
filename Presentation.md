@@ -35,7 +35,8 @@ $$
 Where:
 - \( a \), \( b \) are curve parameters
 - \( p \) is a large prime defining the field
-  
+
+
 Given two points $P$ and $Q$ on the elliptic curve and a prime for finite field: we calculate the third point based on the following cases:
 
 **Case 1: If either point is at infinity:** 
