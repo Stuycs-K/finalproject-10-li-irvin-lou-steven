@@ -11,3 +11,11 @@ A main benefit of ECC as opposed to industry standards like RSA would be the muc
 
 Points $P$ and $Q = kP$
 where Points $P$ and $Q$ are on the elliptical curve and $k$ is a constant that is very difficult to find out as a result of random.
+
+
+### What is ECC?
+ECC is used in many facets of the tech field, including:
+- Digital Signatures through (ECDSA – Elliptic Curve Digital Signature Algorithm)
+- Key Exchange through (ECDH – Elliptic Curve Diffie-Hellman)
+- Used to secure wallets and blockchains for things like bitcoin and ethereum.
+- Web Certifiers for SSL and TLS
