@@ -93,4 +93,34 @@ The equation for point multiplication is $Q = k \cdot P$ where:
 This means:
 - Add \( P \) to itself \( k \) times.
 
-Pretty simple to do once point addition is down.
+Pretty simple to do once point addition is made already.
+
+### ECC Key Generation
+As stated above, ECC uses **public-private key pairs** that are calculated using point operations.
+
+### 1. Choose a Private Key
+
+Pick a **random integer** \( d \) such that:
+
+$$
+1 \leq d \lt n
+$$
+
+This \( d \) is your **private key**.
+
+---
+
+### 2. Compute the Public Key
+
+Use **scalar multiplication**:
+
+$$
+Q = d \cdot G
+$$
+
+Where:
+- \( G \) is the known base point
+- \( d \) is the private key
+- \( Q \) is the **public key**, a point \( (x, y) \) on the curve
+
+---
