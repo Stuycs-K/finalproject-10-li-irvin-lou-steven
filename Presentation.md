@@ -178,6 +178,7 @@ Ensure that:
   \]$$
 
 - The point has correct order:
+  
   $$\[
   n \cdot G = \mathcal{O}
   \]$$
