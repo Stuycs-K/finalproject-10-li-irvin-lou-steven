@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.*;
 import java.util.HexFormat;
+import java.util.Scanner;
 import java.math.BigInteger;
 
 public class Client {
@@ -12,7 +13,10 @@ public class Client {
     public static BigInteger order;
     public static Point initial;
     public static void main(String[] args) throws Exception {
-        String message = "Test message from client";
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter message");
+        String message = scan.nextLine();
+        scan.close();
 
         // KeyGen
         if (args.length <=1 || !args[0].equals("-t")) {
