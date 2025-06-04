@@ -187,3 +187,17 @@ Ensure that:
 $$\[
 1 \leq r < n,\quad 1 \leq s < n
 \]$$
+
+#### Step 3: Compute intermediate values
+
+$$\[
+w = s^{-1} \mod n
+\]$$
+
+$$\[
+u_1 = z \cdot w \mod n
+\]$$
+
+$$\[
+u_2 = r \cdot w \mod n
+\]$$
