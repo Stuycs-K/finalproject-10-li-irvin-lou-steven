@@ -82,3 +82,13 @@ $$
 $$
 y_3 = m(x_1 - x_3) - y_1 \pmod{p}
 $$
+
+#### Point Multiplication
+
+The equation for point multiplication is 
+$$
+Q = k \cdot P
+$$
+
+This means:
+- Add \( P \) to itself \( k \) times:
