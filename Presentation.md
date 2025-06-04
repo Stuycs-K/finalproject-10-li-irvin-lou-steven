@@ -208,9 +208,7 @@ $$\[
 (X, Y) = u_1 \cdot G + u_2 \cdot Q
 \]$$
 
----
-
-### Step 5: Final check
+#### Step 5: Final check
 
 The signature is **valid** if:
 
