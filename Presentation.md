@@ -137,7 +137,7 @@ Choose a random integer \( k \in [1, n-1] \)
 #### Step 2: Compute point \( R \)
 
 $$
-\( R = k \cdot G \)
+R = k \cdot G
 $$
 
 #### **Step 3: Compute \( r \):**
