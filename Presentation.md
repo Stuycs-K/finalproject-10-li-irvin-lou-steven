@@ -121,3 +121,31 @@ Where:
 - \( d \) is the private key
 - \( Q \) is the **public key**, a point \(x, y\) on the curve
 
+### ECDSA (Elliptic Curve Digital Signature Algorithm)
+
+#### **Important Components in the EDCSA**
+- \( G \): initial point on curve
+- \( n \): order
+- \( d \): private key
+- \( Q \): public key
+- \( z \): hashed message (SHA-256)
+
+#### **Step 1: Pick a random integer**
+
+Choose a random integer \( k \in [1, n-1] \)
+
+#### Step 2: Compute point \( R = k \cdot G \)
+
+#### **Step 3: Compute \( r \):**
+
+$$
+r = x_1 \bmod n
+$$
+
+#### **Step 4: Compute \( s \)**
+
+$$
+s = k^{-1}(z + r \cdot d) \bmod n
+$$
+
+If \( r = 0 \) || \( s = 0 \), go back to step 1 and compute a new key and try again.
