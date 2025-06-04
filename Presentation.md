@@ -182,4 +182,8 @@ Ensure that:
   n \cdot G = \mathcal{O}
   \]$$
 
+#### Step 2: Check signature bounds
 
+$$\[
+1 \leq r < n,\quad 1 \leq s < n
+\]$$
