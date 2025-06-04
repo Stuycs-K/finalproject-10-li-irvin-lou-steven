@@ -11,11 +11,11 @@ run:
 
 #Client.java
 Client:
-	java Client.java
+	java Client.java $(ARGS)
 
 #Server.java
 Server:
-	java Server.java
+	java Server.java $(ARGS)
 	
 # Clean compiled files
 clean:
