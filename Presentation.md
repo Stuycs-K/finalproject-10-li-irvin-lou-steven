@@ -85,7 +85,7 @@ $$
 
 #### Point Multiplication
 
-The equation for point multiplication is 
+The equation for point multiplication is $$$Q = k \cdot P$
 $$
 Q = k \cdot P
 $$
