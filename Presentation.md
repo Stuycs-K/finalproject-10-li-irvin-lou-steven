@@ -155,3 +155,40 @@ $$
 If \( r = 0 \) || \( s = 0 \), go back to step 1 and compute a new key and try again.
 
 Otherwise, our signature is **\(r, s\)**
+
+
+### **EDCSA Signature Verification**
+
+#### **Important Components in the EDCSA Signature Verification**
+- \( G \): initial point
+- \( n \): order
+- \( d \): private key  
+- \( Q \): public key  
+- \( z \): hash of the message (SHA-256)  
+- \( (r, s) \): signature pair
+
+#### Step 1: Validate curve parameters
+
+Ensure that:
+
+- G is not a poiint at infinity
+- G lies on the curve:  
+  \[
+  y^2 \equiv x^3 + ax + b \pmod{p}
+  \]
+
+- The point has correct order:
+  \[
+  n \cdot G = \mathcal{O}
+  \]
+
+---
+
+#### Step 2: Check signature bounds
+
+Ensure:
+
+\[
+1 \leq r < n,\quad 1 \leq s < n
+\]
+
