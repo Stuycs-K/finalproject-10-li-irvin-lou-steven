@@ -98,7 +98,7 @@ Pretty simple to do once point addition is made already.
 ### ECC Key Generation
 As stated above, ECC uses **public-private key pairs** that are calculated using point operations.
 
-### 1. Choose a Private Key
+#### 1. Choose a Private Key
 
 Pick a **random integer** \( d \) such that:
 
@@ -110,7 +110,7 @@ This \( d \) is your **private key**.
 
 ---
 
-### 2. Compute the Public Key
+#### 2. Compute the Public Key
 
 Use **scalar multiplication**:
 
@@ -123,4 +123,3 @@ Where:
 - \( d \) is the private key
 - \( Q \) is the **public key**, a point \( (x, y) \) on the curve
 
----
