@@ -85,10 +85,7 @@ $$
 
 #### Point Multiplication
 
-The equation for point multiplication is $$$Q = k \cdot P$
-$$
-Q = k \cdot P
-$$
+The equation for point multiplication is $Q = k \cdot P$
 
 This means:
 - Add \( P \) to itself \( k \) times:
