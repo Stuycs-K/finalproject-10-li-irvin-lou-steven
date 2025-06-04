@@ -1,7 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/am3xLbu5)
-# PROJECT NAME HERE (CHANGE THIS!!!!!)
+# Elliptic Curve Cryptography Implementation
  
-### GROUP NAME HERE (CHANGE THIS!!!!!)
+### Two Big Guys
 
 Irvin Li, Steven Lou
        
@@ -9,7 +9,7 @@ Irvin Li, Steven Lou
 
 This project emulates the Elliptic Curve Cryptography (ECC) in order to create keypairs, signatures and verification that will later be tested. This involves a server/client connection where both parties generate cryptographic key pairs and exchange public keys to establish a secure channel.
 
-  
+
 ### Instructions:
 
 The user should run
@@ -34,6 +34,9 @@ Baseline is secp256k1 and EDCSA.
 Once running, if EDCSA, it will only ask the client for a message to encrypt.
 
 If it is ECDH, you will have to type a message for both server and client (can be different messages).
+
+### Video Presentation:
+https://drive.google.com/file/d/1tXM53M4pTAcY1oU7jMcvKgWs5oZhFSXX/view?usp=sharing
 
 ### Resources/ References:
 
