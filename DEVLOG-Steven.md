@@ -39,6 +39,7 @@ Further research into ECDH led me to information about Key Derivation Functions 
 - (https://www.baeldung.com/cs/kdf-cryptography)
 - (https://javadoc.sic.tech/iaik_jce/current/iaik/security/kdf/KDF2.html)
 - (https://stackoverflow.com/questions/64396936/what-is-the-purpose-of-using-hkdf)
+- (https://en.wikipedia.org/wiki/Symmetric-key_algorithm#:~:text=Symmetric%2Dkey%20encryption%20can%20use,%2C%20uses%20128%2Dbit%20blocks.)
 
 ### 2025-05-27 - Brief description
 I worked on the signing portion of the Elliptic Curve Digital Signature Algorithm (ECDSA) and was able to obtain a signature, albeit untested, through implementing the mathematical process.
