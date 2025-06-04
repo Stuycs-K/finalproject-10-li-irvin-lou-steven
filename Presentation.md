@@ -1,5 +1,5 @@
 # **Elliptic Curve Cryptography (ECC)**
-## **GROUP MEMBERS:**   Irvin Li, Steven Luo
+## **GROUP MEMBERS:**   Irvin Li, Steven Lou
 
 #
 
@@ -242,4 +242,8 @@ $$
 In other words, multiplication by BigInteger keys is commutative under elliptic curve operations.
 
 #### Step 6:
-The client uses a key derivation function in combination with a hash to elongate the shared message 
+The client uses a key derivation function in combination with a hash to elongate the shared message and create a symmetric key based on the entropy of the elliptic curve function. They then use a symmetric key cipher to encrypt the message they are trying to send to the server.
+
+#### Step 7:
+The server uses their shared secret and the same key derivation function and symmetric key cipher to decrypt the message received through the socket channel. Message received!
+
