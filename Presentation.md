@@ -239,6 +239,11 @@ $$
 d_A \cdot Q_B = d_A \cdot d_B \cdot G = d_B \cdot d_A \cdot G = d_B \cdot Q_A.
 $$
 
+Where:
+- \( d_A \), \( d_B \) are private keys
+- \( Q_A \), \( Q_B \) are public keys
+- \( G \) is the initial point
+
 In other words, multiplication by BigInteger keys is commutative under elliptic curve operations.
 
 #### Step 6:
