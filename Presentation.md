@@ -26,6 +26,5 @@ ECC is used in many facets of the tech field, including:
 ECC requires two point operations: point addition and point multiplication.
 #### Point Addition
 Given two points on the elliptic curve and a prime for finite field: we calculate the third point based on the following cases:
-**If either point is at infinity:** 
-
-Return the other point 
+#**If either point is at infinity:** 
+#Return the other point 
