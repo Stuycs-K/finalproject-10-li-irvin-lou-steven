@@ -1,7 +1,9 @@
 # **Elliptic Curve Cryptography (ECC)**
 ## **GROUP MEMBERS:**   Irvin Li, Steven Lou
 
-#
+
+![image](https://github.com/user-attachments/assets/61cbd62c-d50e-4550-a642-29149c81e5b1)
+###### Elliptical Curve
 
 ### What is ECC?
 Elliptic Curve Cryptography is an example of asymmetric cryptography in which there is a public and private key.
@@ -13,7 +15,7 @@ Points $P$ and $Q = kP$
 where Points $P$ and $Q$ are on the elliptical curve and $k$ is a constant that is very difficult to find out as a result of random.
 
 
-### What is ECC?
+### Where is it used?
 ECC is used in many facets of the tech field, including:
 - Digital Signatures through (ECDSA – Elliptic Curve Digital Signature Algorithm)
 - Key Exchange through (ECDH – Elliptic Curve Diffie-Hellman)
@@ -36,6 +38,8 @@ Where:
 - \( a \), \( b \) are curve parameters
 - \( p \) is a large prime defining the field
 
+![image](https://github.com/user-attachments/assets/fb086d5b-200e-41b3-a40b-8a9040d93d25)
+###### Point Addition
 
 Given two points $P$ and $Q$ on the elliptic curve and a prime for finite field: we calculate the third point based on the following cases:
 
@@ -156,6 +160,8 @@ If \( r = 0 \) || \( s = 0 \), go back to step 1 and compute a new key and try a
 
 Otherwise, our signature is **\(r, s\)**
 
+![image](https://github.com/user-attachments/assets/1a176f60-bbb2-40a4-8cc3-78e1992f13b1)
+##### EDCSA Process
 
 ### **EDCSA Signature Verification**
 
@@ -252,3 +258,5 @@ The client uses a key derivation function in combination with a hash to elongate
 #### Step 7:
 The server uses their shared secret and the same key derivation function and symmetric key cipher to decrypt the message received through the socket channel. Message received!
 
+![image](https://github.com/user-attachments/assets/c1f54714-c59c-488e-b395-bc714239d418)
+###### EDCH Process

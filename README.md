@@ -49,3 +49,7 @@ If it is ECDH, you will have to type a message for both server and client (can b
 - https://docs.oracle.com/javase/tutorial/networking/sockets/index.html
 - https://docs.oracle.com/javase/8/docs/api/java/net/Socket.html
 - https://www.geeksforgeeks.org/serialization-and-deserialization-in-java/
+- https://tejnaren07.medium.com/ecdsa-vs-rsa-what-and-why-e83c4c3b501a
+- https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/
+- https://aws.amazon.com/blogs/security/announcing-aws-kms-elliptic-curve-diffie-hellman-ecdh-support/
+- https://scryptplatform.medium.com/efficient-elliptic-curve-point-addition-and-multiplication-in-scrypt-script-f7e143a752e2
