@@ -117,7 +117,7 @@ Q = d \cdot G
 $$
 
 Where:
-- \( G \) is the known base point
+- \( G \) is the initial point
 - \( d \) is the private key
 - \( Q \) is the **public key**, a point \(x, y\) on the curve
 
