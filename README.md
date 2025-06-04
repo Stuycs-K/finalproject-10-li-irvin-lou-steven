@@ -7,7 +7,8 @@ Irvin Li, Steven Lou
        
 ### Project Description:
 
-Explain what is this project. (CHANGE THIS!!!!!)
+This project emulates the Elliptic Curve Cryptography (ECC) in order to create keypairs, signatures and verification that will later be tested. This involves a server/client connection where both parties generate cryptographic key pairs and exchange public keys to establish a secure channel.
+
   
 ### Instructions:
 
