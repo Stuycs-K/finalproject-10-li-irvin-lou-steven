@@ -1,7 +1,9 @@
 # **Elliptic Curve Cryptography (ECC)**
-## **GROUP MEMBERS:**   Irvin Li, Steven Luo
+## **GROUP MEMBERS:**   Irvin Li, Steven Lou
 
-#
+
+![image](https://github.com/user-attachments/assets/61cbd62c-d50e-4550-a642-29149c81e5b1)
+###### Elliptical Curve
 
 ### What is ECC?
 Elliptic Curve Cryptography is an example of asymmetric cryptography in which there is a public and private key.
@@ -13,7 +15,7 @@ Points $P$ and $Q = kP$
 where Points $P$ and $Q$ are on the elliptical curve and $k$ is a constant that is very difficult to find out as a result of random.
 
 
-### What is ECC?
+### Where is it used?
 ECC is used in many facets of the tech field, including:
 - Digital Signatures through (ECDSA – Elliptic Curve Digital Signature Algorithm)
 - Key Exchange through (ECDH – Elliptic Curve Diffie-Hellman)
@@ -36,6 +38,8 @@ Where:
 - \( a \), \( b \) are curve parameters
 - \( p \) is a large prime defining the field
 
+![image](https://github.com/user-attachments/assets/fb086d5b-200e-41b3-a40b-8a9040d93d25)
+###### Point Addition
 
 Given two points $P$ and $Q$ on the elliptic curve and a prime for finite field: we calculate the third point based on the following cases:
 
@@ -156,6 +160,8 @@ If \( r = 0 \) || \( s = 0 \), go back to step 1 and compute a new key and try a
 
 Otherwise, our signature is **\(r, s\)**
 
+![image](https://github.com/user-attachments/assets/1a176f60-bbb2-40a4-8cc3-78e1992f13b1)
+###### EDCSA Process
 
 ### **EDCSA Signature Verification**
 
@@ -216,3 +222,41 @@ $$\[
 r \equiv X \mod n
 \]$$
 
+### **ECDH Key Exchange Protocol**
+
+Through an insecure channel, a client and server party are able to generate a symmetric key without third-parties receiving access to the symmetric key.
+
+#### Step 1:
+Both parties generate their own public and private key pairs, agreeing on the same elliptic curve parameters.
+
+#### Step 2:
+The server listens for the client through a port, waiting to receive their static public key and a signed message. The signature is used to verify if the public key is truly from their client, preventing man-in-the-middle (MitM) attacks.
+
+#### Step 3:
+The server then verifies the client's signature using their static public key. If it is indeed their client, then they will send their own static public key along with a signature for the client to validate them.
+
+#### Step 4:
+The client receives the static public key from the server and uses it to verify the server's authenticity.
+
+#### Step 5:
+The client creates the shared secret by multiplying the server's public key and their own private key, resulting on a point on the elliptic curve. Likewise, the server creates the shared secret my multiplying the client's public key and their own private key, resulting on the same point on the elliptic curve. This is the case because
+
+$$
+d_A \cdot Q_B = d_A \cdot d_B \cdot G = d_B \cdot d_A \cdot G = d_B \cdot Q_A.
+$$
+
+Where:
+- \( d_A \), \( d_B \) are private keys
+- \( Q_A \), \( Q_B \) are public keys
+- \( G \) is the initial point
+
+In other words, multiplication by BigInteger keys is commutative under elliptic curve operations.
+
+#### Step 6:
+The client uses a key derivation function in combination with a hash to elongate the shared message and create a symmetric key based on the entropy of the elliptic curve function. They then use a symmetric key cipher to encrypt the message they are trying to send to the server.
+
+#### Step 7:
+The server uses their shared secret and the same key derivation function and symmetric key cipher to decrypt the message received through the socket channel. Message received!
+
+![image](https://github.com/user-attachments/assets/c1f54714-c59c-488e-b395-bc714239d418)
+###### EDCH Process

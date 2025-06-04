@@ -11,6 +11,11 @@ Basic Overview:
 -Eliptic Curve Cryptography is an assymetric Cryptography and relies on the Elliptic Curve Discrete Logarithm Problem to create a secure encryption.
 -It has smaller key sizes compared to RSA.
 Verified that there is a way to test almost every step in the process.
+**Sources:**
+- (https://en.wikipedia.org/wiki/Elliptic-curve_cryptography)
+- (https://www.keyfactor.com/blog/elliptic-curve-cryptography-what-is-it-how-does-it-work/)
+- (https://cryptobook.nakov.com/asymmetric-key-ciphers/elliptic-curve-cryptography-ecc)
+- (https://medium.com/@abhiveerhome/building-elliptic-curve-cryptography-ecc-from-scratch-7b28e3b27531)
 
 ### 2025-05-19 - Point Addition / Point Class
 Steven created the Point class for mapping points on the elliptic curve. We realized that we could not use ints, doubles, or longs because the primes could be 190-520 bits which would result in inprecise coordinates due to rounding. We decided to use BigInteger, but we do not have access to a function isinfinity() with a BigInteger since the int can be as large as the devices memory can handle. As a result, we had to instead assign an infinity boolean  and check for that. 
@@ -28,8 +33,33 @@ Created sign class and ran into issues with the hash class we were planning to u
 
 ### 2025-05-25 - Researching .jar files
 Researched how to import .jar file. Kept getting information to use maven or gradle, but I am not sure I allowed to use these or IDEs so I will try to manually add the jar file and the depencies.
+**Sources:**
+- (https://mvnrepository.com/artifact/org.web3j)
+- (https://docs.web3j.io/4.11.0/)
+- (https://docs.web3j.io/latest/getting_started/manual_configuration/)
+- (https://central.sonatype.com/artifact/org.web3j/core/4.8.6)
 
 ### 2025-05-27 - Attempting to implement .jar file
 Created lib and added org.web3j.crypto.jar into it and updated makefile to properly test sign using the necesarry parameters. Seems to not work, I try to make it a dependency and google-fu is letting me down.
 
-### 
+### 2025-05-29 - Begins Driver file and updating makefile
+Starts work on the Driver class where I prompt users for starting parameters for the elliptical curve that will be used for the calculations. Also, updated makefile in order to properly test for this and abandoned the .jar cuz we could not get it to work.
+**Source:**
+- (https://www.secg.org/sec2-v2.pdf)
+
+### 2025-05-30 - Finish Driver,java
+Continues working on Driver.java and creates plan for next week. Plans to try to implement server/client exchanges of signatures.
+
+### 2025-05-31-2025-06-01 - Researching Sockets
+I was looking into sockets for java and I was able to comfortably pick up enough to possibly create a server and client connection.
+Sources:
+(https://docs.oracle.com/javase/tutorial/networking/sockets/index.html)
+(https://docs.oracle.com/javase/8/docs/api/java/net/Socket.html)
+
+### 2025-06-02 - Server and Client
+Created Server and Client Class for one way (EDCSA), proposed how to implement args and use ECDH and two-way communication. Also learned serialization.
+**Source:**
+- (https://www.geeksforgeeks.org/serialization-and-deserialization-in-java/)
+
+### 2025-06-03 - Server/Client ARGS and presentation.md
+Implemented args for server and client and combined the edcsa and edch versions together. Worked on presentation.md and last minute touch ups.
