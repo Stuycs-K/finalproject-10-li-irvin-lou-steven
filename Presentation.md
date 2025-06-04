@@ -218,3 +218,10 @@ r \equiv X \mod n
 
 ### **ECDH Key Exchange Protocol**
 
+Through an insecure channel, a client and server party are able to generate a symmetric key without third-parties receiving access to the symmetric key.
+
+#### Step 1:
+The server listens for the client through a port, waiting to receive their public key and a signed message. The signature is used to verify if the public key is truly from their client, preventing man-in-the-middle (MitM) attacks.
+
+#### Step 2:
+The server then verifies the client's signature using their public key. If it is indeed their client, then they will send 
