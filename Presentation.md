@@ -10,4 +10,4 @@ It uses the principle of elliptic curves over finite fields in order to provide 
 A main benefit of ECC as opposed to industry standards like RSA would be the much smaller keys in comparison to other forms due to the concept known as te Elliptic Curve Discrete Logarithm Problem (ECDLP).
 
 Points $P$ and $Q = kP$
-where $k$ and Points $P$ and $Q$ are on the elliptical curve and $k$ is a constant.
+where Points $P$ and $Q$ are on the elliptical curve and $k$ is a constant.
