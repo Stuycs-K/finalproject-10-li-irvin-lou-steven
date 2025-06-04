@@ -36,15 +36,21 @@ Return the other point
 First find the slope between the two points using the following formula:
 
 $$
-x_3 = m^2 - x_1 - x_2 \pmod{p}
+m = \frac{3x_1^2 + a}{2y_1} \pmod{p}
+$$
+
+Then:
+
+$$
+x_3 = m^2 - 2x_1 \pmod{p}
 $$
 
 $$
 y_3 = m(x_1 - x_3) - y_1 \pmod{p}
 $$
 
-The resulting point is:
+So:
 
 $$
-R = P + Q = (x_3, y_3)
+R = 2P = (x_3, y_3)
 $$
