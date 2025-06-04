@@ -161,7 +161,7 @@ If \( r = 0 \) || \( s = 0 \), go back to step 1 and compute a new key and try a
 Otherwise, our signature is **\(r, s\)**
 
 ![image](https://github.com/user-attachments/assets/1a176f60-bbb2-40a4-8cc3-78e1992f13b1)
-##### EDCSA Process
+###### EDCSA Process
 
 ### **EDCSA Signature Verification**
 
