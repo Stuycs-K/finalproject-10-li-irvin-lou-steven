@@ -201,3 +201,20 @@ u_1 = z \cdot w \mod n
 $$\[
 u_2 = r \cdot w \mod n
 \]$$
+
+#### Step 4: Compute point on curve
+
+$$\[
+(X, Y) = u_1 \cdot G + u_2 \cdot Q
+\]$$
+
+---
+
+### Step 5: Final check
+
+The signature is **valid** if:
+
+$$\[
+r \equiv X \mod n
+\]$$
+
