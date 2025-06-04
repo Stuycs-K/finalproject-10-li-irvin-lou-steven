@@ -53,3 +53,13 @@ If it is ECDH, you will have to type a message for both server and client (can b
 - https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/
 - https://aws.amazon.com/blogs/security/announcing-aws-kms-elliptic-curve-diffie-hellman-ecdh-support/
 - https://scryptplatform.medium.com/efficient-elliptic-curve-point-addition-and-multiplication-in-scrypt-script-f7e143a752e2
+- https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm
+- https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman
+- https://en.wikipedia.org/wiki/Key_derivation_function
+- https://www.baeldung.com/cs/kdf-cryptography
+- https://javadoc.sic.tech/iaik_jce/current/iaik/security/kdf/KDF2.html
+- https://stackoverflow.com/questions/64396936/what-is-the-purpose-of-using-hkdf
+- https://en.wikipedia.org/wiki/Symmetric-key_algorithm#:~:text=Symmetric%2Dkey%20encryption%20can%20use,%2C%20uses%20128%2Dbit%20blocks.
+- https://www.baeldung.com/java-aes-encryption-decryption
+- https://www.baeldung.com/sha-256-hashing-java
+- https://docs.oracle.com/javase/8/docs/api/java/security/MessageDigest.html
