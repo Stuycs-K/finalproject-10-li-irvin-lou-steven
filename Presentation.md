@@ -33,13 +33,13 @@ Return the other point
 
 **If $P$ and $Q$ are equal, we will perform point doubling since both of them are equal:**
 
-First find the slope between the two points using the following formula:
+First find the slope between the two points using the following equation.
 
 $$
 m = \frac{3x_1^2 + a}{2y_1} \pmod{p}
 $$
 
-Then:
+Then calculate the coordinates of the thirs point using the folloiwing equations.
 
 $$
 x_3 = m^2 - 2x_1 \pmod{p}
