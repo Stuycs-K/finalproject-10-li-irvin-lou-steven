@@ -27,11 +27,11 @@ ECC requires two point operations: point addition and point multiplication.
 #### Point Addition
 Given two points $P$ and $Q$ on the elliptic curve and a prime for finite field: we calculate the third point based on the following cases:
 
-**If either point is at infinity:** 
+**Case 1: If either point is at infinity:** 
 
 Return the other point 
 
-**If $P$ and $Q$ are equal, we will perform point doubling since both of them are equal:**
+**Case 2: If $P$ and $Q$ are equal, we will perform point doubling since both of them are equal:**
 
 First find the slope between the two points using the following equation.
 
@@ -49,8 +49,30 @@ $$
 y_3 = m(x_1 - x_3) - y_1 \pmod{p}
 $$
 
-So:
+**Case 3: Inverse Points**
+
+The resulting point will be at infinity and is an identity.
+
+**Case 4: Point Addition \( P \ne Q \)**
+
+Let:
 
 $$
-R = 2P = (x_3, y_3)
+P = (x_1, y_1), \quad Q = (x_2, y_2)
+$$
+
+The slope \( m \) is:
+
+$$
+m = \frac{y_2 - y_1}{x_2 - x_1} \pmod{p}
+$$
+
+Then:
+
+$$
+x_3 = m^2 - x_1 - x_2 \pmod{p}
+$$
+
+$$
+y_3 = m(x_1 - x_3) - y_1 \pmod{p}
 $$
