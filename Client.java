@@ -89,12 +89,12 @@ public class Client {
                     System.out.println("Signature valid? " + isValid);
 
                     //Send message
-                    System.out.println("Message: " + args[0]);
+                    System.out.println("Message: " + message);
 
                     Point sym_key = selectedCurve.point_multiplication(publicKey, keypair.getprivate_key(), prime);
                     System.out.println("Symmetric key: " + sym_key);
 
-                    String salted_message = args[0] + Symmetric_Encrypt.salt;
+                    String salted_message = message + Symmetric_Encrypt.salt;
                     byte[] encrypted = Symmetric_Encrypt.encrypt_xor(sym_key.getX(), salted_message.getBytes());
                     String hexMessage = HexFormat.of().formatHex(encrypted);
                     
