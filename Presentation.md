@@ -108,8 +108,6 @@ $$
 
 This \( d \) is your **private key**.
 
----
-
 #### 2. Compute the Public Key
 
 Use **scalar multiplication**:
