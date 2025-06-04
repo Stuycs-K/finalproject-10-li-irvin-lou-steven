@@ -53,13 +53,7 @@ $$
 
 The resulting point will be at infinity and is an identity.
 
-**Case 4: Point Addition \( P \ne Q \)**
-
-Let:
-
-$$
-P = (x_1, y_1), \quad Q = (x_2, y_2)
-$$
+**Case 4: Point Addition $$\( P \ne Q \)$$**
 
 The slope \( m \) is:
 
