@@ -11,8 +11,17 @@ Explain what is this project. (CHANGE THIS!!!!!)
   
 ### Instructions:
 
-How does the user install/compile/run the program. (CHANGE THIS!!!!!)
-How does the user interact with this program? (CHANGE THIS!!!!!)
+The user should run
+`make compile`
+After, if you simply want to test that verification works for the user,
+run `make Driver.java ARGS="<either **secp256k1** or **secp256r1**>" or no args for automatic secp256k1.`
+To run client/server, open two terminals.
+`make server ARGS="-t <elliptical curve parameter> -e (ECDH or EDCSA)"`
+`make client ARGS="-t <elliptical curve parameter> -e (ECDH or EDCSA)"`
+Please make sure the args are the same or else it will not work.
+Baseline is secp256k1 and EDCSA
+Once running, if EDCSA, it will only ask the client for a message to encrypt.
+If it is ECDH, you will have to type a message for both server and client (can be different messages).
 
 ### Resources/ References:
 
